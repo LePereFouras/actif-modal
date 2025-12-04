@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Narjis ♥</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 182, 193, 0.7);
+            transform: rotate(45deg);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 182, 193, 0.7);
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            left: -10px;
+        }
+
+        .heart:after {
+            top: -10px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #d63384;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(214, 51, 132, 0.3);
+        }
+
+        .emoji-line {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .message {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #333;
+            margin: 25px 0;
+        }
+
+        .highlight {
+            color: #d63384;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        .rose {
+            display: inline-block;
+            font-size: 3em;
+            animation: sway 2s infinite ease-in-out;
+        }
+
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 1.5s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji-line">
+            <span class="sparkle">✨</span>
+            <span class="rose">🌹</span>
+            <span class="sparkle">✨</span>
+        </div>
+        
+        <h1 class="title">Pour ma chère Narjis 💕</h1>
+        
+        <div class="emoji-line">💝 💖 💗</div>
+        
+        <div class="message">
+            <p>Je suis vraiment désolé d'avoir été distant ces derniers temps.</p>
+            <p>Tu mérites toute mon attention et ma présence.</p>
+        </div>
+        
+        <div class="emoji-line">🌸 🦋 🌸</div>
+        
+        <div class="message">
+            <p>Je veux que tu saches que <span class="highlight">je t'aime pour toujours</span>.</p>
+            <p>Tu es la personne la plus précieuse dans ma vie.</p>
+        </div>
+        
+        <div class="emoji-line">💫 ⭐ 💫</div>
+        
+        <div class="message">
+            <p>Pardonne-moi et sache que mon cœur t'appartient entièrement.</p>
+        </div>
+        
+        <div class="emoji-line">
+            <span class="sparkle">💕</span>
+            <span class="sparkle">💞</span>
+            <span class="sparkle">💕</span>
+        </div>
+        
+        <div class="signature">
+            Avec tout mon amour 💖
+        </div>
+        
+        <div class="emoji-line">
+            <span class="rose">🌹</span>
+            <span class="rose">🌹</span>
+            <span class="rose">🌹</span>
+        </div>
+    </div>
+
+    <script>
+        // Créer des cœurs flottants
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Créer des cœurs régulièrement
+        setInterval(createHeart, 300);
+        
+        // Créer quelques cœurs au démarrage
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 200);
+        }
+    </script>
+</body>
+</html>
